@@ -1,7 +1,7 @@
 styles = """
 /*
- * "my love gift"💕 v0.0.1
- * Authored by idealclover
+ * "gift for my girl"💕 v0.0.1
+ * Authored by WeijieZhan(JayChan)
  */
 
 body {
@@ -13,11 +13,11 @@ body {
 /*
  * ...
  * ...hello?
- * 大家好！我是翠翠！idealclover~
- * 情人节快到了，该给女朋友点什么呢~
- * 写一个网页给子枨吧ww送她一颗小心心~
+ * 大家好！我是JayChan~
+ * 七夕快到了，该给心爱的女孩点什么呢~
+ * 写一个网页给我爱的小疯子吧~~送她一颗小心心~
  * 可是~要怎么做呢~
- * 首先做一个框框来放我们的代码吧ww
+ * 首先做一个框框来放我们的代码吧~~
  * 那么~开动啦！！
  */
 
@@ -118,7 +118,7 @@ pre em:not(.comment) { font-style: normal; }
           transform-origin: 100% 100%;
 }
 
-/* 给它加上一点阴影ww */
+/* 给它加上一点阴影~~ */
 
 #heart::after {
   box-shadow:
@@ -132,12 +132,12 @@ pre em:not(.comment) { font-style: normal; }
 
 /*
  * 这可是~我的小心心~
- * 我要给它签上我的名字！
+ * 我要给它签上我和小蜜蜂的名字！
  * >v<
  */
 
 #heart i::before {
-  content: 'idealclover';
+  content: 'Weijie & XuFeng';
   position: absolute;
   z-index: 9;
   width: 100%;
@@ -195,7 +195,7 @@ pre em:not(.comment) { font-style: normal; }
 }
 
 /*
- * 好哒！接下来准备让它跳起来吧ww
+ * 好哒！接下来准备让它跳起来吧~~
  */
 
 #heart, #echo {
@@ -252,17 +252,16 @@ pre em:not(.comment) { font-style: normal; }
  * 诶嘿~~
  * 这样我们的小心心就做好啦~
  * 怎么样~ >v< 还好看吗~~
- * 亲爱哒！情人节快乐！
+ * 亲爱哒！七夕快乐！
  * 爱你哦！
  *
  */
 
 /*
- * "my love gift" v0.0.1
- * Robot rights protected under BOT License & Apache2 license
- * Inspired by pen#PwLXXP
- * 谨以此网页献给我的女朋友子枨💕
- * 你最可爱ww
+ * 谨以此网页献给我爱的徐峰💕
+ * 你最可爱~～
+ * 你最漂亮~～
+ * 我最爱你~～
  */
 """
 finalStyle = styles
@@ -270,20 +269,20 @@ openComment = false
 isOn = true
 
 writeStyleChar = (which) ->
-	# begin wrapping open comments
+# begin wrapping open comments
   if which == '/' && openComment == false
     openComment = true
     styles = $('#style-text').html() + which
   else if which == '/' && openComment == true
     openComment = false
     styles = $('#style-text').html().replace(/(\/[^\/]*\*)$/, '<em class="comment">$1/</em>')
-  # wrap style declaration
+# wrap style declaration
   else if which == ':'
     styles = $('#style-text').html().replace(/([a-zA-Z- ^\n]*)$/, '<em class="key">$1</em>:')
-  # wrap style value
+# wrap style value
   else if which == ';'
     styles = $('#style-text').html().replace(/([^:]*)$/, '<em class="value">$1</em>;')
-  # wrap selector
+# wrap selector
   else if which == '{'
     styles = $('#style-text').html().replace(/(.*)$/, '<em class="selector">$1</em>{')
   else
@@ -308,7 +307,7 @@ skip = () ->
     $('#style-tag').html finalStyle
     pre = document.getElementById 'style-text'
     pre.scrollTop = pre.scrollHeight
-  ), 2*commentTime
+  ), 2 * commentTime
 
 
 # appending the tags I'll need.
@@ -317,12 +316,6 @@ $('body').append """
 	<span id="echo"></span>
 	<span id="heart"><i></i></span>
 	<pre id="style-text"></pre>
-  <div style = 'position: fixed;left: 30px;bottom: 10px;'>
-    <a id='skipAnimation'>跳过动画</a>
-    <a style='color: #fff' href='http://love.idealclover.top'>重新播放</a>
-    <a style='color: #fff' target="_blank" href='https://github.com/idealclover/Love-Gift'>项目地址</a>
-    <a style='color: #fff' target="_blank" href='https://www.idealclover.top/'>我的博客</a>
-  </div>
 """
 
 
