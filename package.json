@@ -1,7 +1,7 @@
 {
-  "name": "love-gift-for-xufeng",
-  "version": "1.0.0",
-  "description": "my love gift to girlfriend",
+  "name": "love-gift-for-",
+  "version": "5.2.0",
+  "description": "",
   "scripts": {
     "build": "copyfiles -u 1 -e src/index.coffee src/**/* dist && coffee -c -o dist/ src/index.coffee",
     "dev": "copyfiles -u 1 -e src/index.coffee src/**/* dist && coffee -w -c -o dist/ src/index.coffee",
